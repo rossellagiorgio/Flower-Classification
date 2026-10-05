@@ -6,8 +6,8 @@ Classifies images into **104 flower classes** in TensorFlow/Keras on a single Ka
 
 | Stage | Macro F1 | Precision | Recall | Val accuracy |
 |---|---|---|---|---|
-| Head only (VGG16 frozen) | 0.822 | 0.856 | 0.806 | see notebook |
-| + Fine-tuning (`block5`) | **0.886** | 0.915 | 0.873 | 0.894 |
+| Head only (VGG16 frozen) | 0.822 | 0.856 | 0.806 | 0.828 |
+| + Fine-tuning (`block5`) | **0.879** | 0.898 | 0.868 | 0.891 |
 
 Fine-tuning the last convolutional block improved F1 by about 6 points.
 
@@ -24,7 +24,8 @@ Instead of training a network from scratch, we reuse VGG16, which was already tr
 
 ```
 .
-├── notebook.ipynb    # full pipeline: data, training, evaluation, submission
+├── deep-learning-flower-classification (2).ipynb  # full pipeline: data, training, evaluation, submission
+├── submission.csv  # (test predictions (id, label))
 └── README.md
 ```
 
@@ -32,7 +33,7 @@ Instead of training a network from scratch, we reuse VGG16, which was already tr
 
 1. Open the notebook on Kaggle and attach the dataset.
 2. Set **Accelerator -> GPU**.
-3. Run all cells in order. The last cell writes `submission.csv` (test predictions (id, label)).
+3. Run all cells in order. The last cell writes `submission.csv`.
 
 
 ## Possible improvements
